@@ -1,0 +1,145 @@
+/* 1. Create an Author class and a Book class.
+Author should have: name, email, gender. 
+It should have appropriate getters and setters.
+It should have a toString method.
+
+Book should have: title, author(Author), price, quantity.
+It should have appropriate getters and setters.
+It should have a method: getProfit(), which calculates the profit from the book based on the price and quantity.
+It should have a toString method.
+*/
+class Author {
+            constructor (name, email, gender){
+                this._name = name;
+                this._email = email;
+                this._gender = gender;
+            }
+            get name() {
+                return this._name;
+            }
+            set name(value) {
+                return this._name = value;
+            }
+            get email() {
+                return this._email;
+            }
+            set email(value) {
+                return this._email = value;
+            }
+            get gender() {
+                return this._gender;
+            }
+            set gender(value) {
+                return this._gender = value;
+            }
+            toString() {
+                return this;
+            }
+        }
+            class Book extends Author {
+            constructor (name, email, gender, title, price, quantity) {
+                super(name, email, gender);
+                this._title = title;
+                this.price = price;
+                this._quantity = quantity;
+            }
+            get title() {
+                return this._title;
+            }
+            set title(value) {
+                return this._title = value;
+            }
+            get price() {
+                return this._price;
+            }
+            set price(value) {
+                return this._price = value;
+            }
+            get quantity() {
+                return this._quantity;
+            }
+            set quantity(value) {
+                return this._quantity = value;
+            }
+            getPriofit() {
+                return this._price * this._quantity;
+            }    
+            toString() {
+                return "It's a very good book";
+            }
+        }
+        
+            let author = new Author("Anna", "anna.grigoryan@sgm.am", "female" );
+            let book = new Book("Anna", "anna.grigoryan@sgm.am", "female", "My first book", 2300, 100);
+            console.log(book.name);
+            console.log(book.getPriofit());
+            console.log(book.toString());
+            console.log(book);
+/* Create an Account class. Account should have: id, name, balance.
+It should have setters for name and balance, and getters for all fields.
+It should have a method: credit(amount), which should add amount to balance and return the updated balance.
+It should have a method: debit(amount), which should subtract the amount from the balance, if amount is less than the balance, otherwise output “Amount exceeded balance.”
+It should have a method: transferTo(anotherAccount, amount): which should subtract the amount from the account balance and add it to the given anotherAccount and return the updated balance, if amount is less than the balance, otherwise output “Amount exceeded balance.”
+It should have a static method: identifyAccounts(accountFirst, accountSecond) which gets two accounts and identifies if they are the same or not comparing all fields.
+It should have toString method.
+*/
+class Account {
+    constructor (id, name, balance) {
+        this.id = id;
+        this.name = name;
+        this.balance = balance;
+    }
+    get idOfAccount() {
+        return this.id;
+    }
+    get nameOfAccount() {
+        return this.name;
+    }
+    set nameOfAccount(value) {
+        return this.name = value;
+    }
+    get balanceOfAccount() {
+        return this.balance;
+    }
+    set balanceOfAccount(value) {
+        return this.balance = value;
+    }
+    credit(amount) {
+        this.balance += amount;
+        return this.balance;
+    }
+    dedit(amount) {
+        if(this.balance >= amount) {
+            this.balance -= amount;
+            return this.balance;
+        } else {
+            return "Amount exceeded balance";
+        }
+    }
+    transferTo(anotherAccount, amount) {
+        if(this.balance < amount) {
+            return "Amount exceeded balance";
+        } else {
+            this.balance -= amount;
+            anotherAccount += amount;
+            return this.balance;
+        }
+    }
+    static identifyAccounts(accountFirst, accountSecond) {
+        for (let key in accountFirst) {
+            if(accountFirst[key] !== accountSecond[key]) {
+                return false;
+            }
+                return true;
+        }
+    }
+    toString() {
+        return "We are glad to help you";
+    }
+}
+    let accountFirst = new Account("20500", "Inecobank", 1000);
+    let accountSecond = new Account("20500", "Inecobank", 5000);
+    let accountThird = new Account("20500", "Inecobank", 1000);
+    console.log(Account.identifyAccounts(accountFirst, accountSecond));
+    console.log(Account.identifyAccounts(accountFirst, accountThird));
+    console.log(accountFirst.transferTo(0, 500));
