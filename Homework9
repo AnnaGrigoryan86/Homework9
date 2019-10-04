@@ -169,25 +169,25 @@ It should have a toString method.
             return this.firstName;
         }
         set personFirstname(value) {
-            this.firstName = value;
+            return this.firstName = value;
         }
         get personLastname() {
             return this.lastName;
         }
         set personLastname(value) {
-            this.lastName = value;
+            return this.lastName = value;
         }
         get personGender() {
             return this.gender;
         }
         set personGender(value) {
-            this.gender = value;
+            return this.gender = value;
         }
         get personAge() {
             return this.age;
         }
         set personAge(value) {
-            this.age = value;
+            return this.age = value;
         }
         tostring() {
             return "I am a Person";
@@ -206,19 +206,19 @@ It should have a toString method.
             return this.program;
         }
         set studentProgram(value) {
-            this.program = value;
+            return this.program = value;
         }
         get studentYear() {
             return this.year;
         }
         set studentYear(value) {
-            this.year = value;
+            return this.year = value;
         }
         get studentFee() {
             return this.fee;
         }
         set studentFee(value) {
-            this.fee = value;
+            return this.fee = value;
         }
         passExam(program, grade = []) {
             for(let i = 0, i < program.length, i++) {
@@ -246,13 +246,13 @@ It should have a toString method.
             return this.program;
         }
         set teacherProgram(value) {
-            this.program = value;
+            return this.program = value;
         }
         get teacherPay() {
             return this.pay;
         }
         set teacherPay(value) {
-            this.pay = value;
+            return this.pay = value;
         }
         toString() {
             return "I am a Teacher";
