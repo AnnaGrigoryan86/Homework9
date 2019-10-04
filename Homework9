@@ -159,7 +159,7 @@ It should have appropriate getters and setters.
 It should have a toString method.
 */
     class Person {
-        constuctor (firstName, lastName, gender, age) {
+        constructor (firstName, lastName, gender, age) {
             this.firstName = firstName;
             this.lastName = lastName;
             this.gender = gender;
@@ -195,7 +195,7 @@ It should have a toString method.
     }
         
     class Student extends Person {
-        constuctor (firstName, lastName, gender, age, program = [], year, fee, exams = {}) {
+        constructor (firstName, lastName, gender, age, program = [], year, fee, exams = {}) {
             super(firstName, lastName, gender, age);
             this.program = program;
             this.year = year;
@@ -237,7 +237,7 @@ It should have a toString method.
         }
     }
     class Teacher extends Person {
-        constuctor (firstName, lastName, gender, age, program = [], pay) {
+        constructor (firstName, lastName, gender, age, program = [], pay) {
             super(firstName, lastName, gender, age);
             this.program = program;
             this.pay = pay;
